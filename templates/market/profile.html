@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %}
+{% block title %} Профіль {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                Деталі супермаркета
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <table class="table table-borderless">
+                        <thead>
+                            <a class="btn btn-info btn-sm float-right" href="{% url 'Изменить профиль' %}">Редагувати</a>
+                            <tr>
+                                <th scope="row">Адміністратор</th>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Назва</th>
+                                <td>{{ user.profile.market }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Телефон</th>
+                                <td>{{ user.profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Адрес</th>
+                                <td>{{ user.profile.address }}</td>
+                            </tr>
+                             <tr>
+                                <th scope="row">Тип</th>
+                                <td>{{ user.profile.type }}</td>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

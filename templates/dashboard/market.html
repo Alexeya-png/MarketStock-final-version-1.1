@@ -1,0 +1,46 @@
+{% extends 'partials/base.html' %}
+{% block title %}Супермаркети{% endblock %}
+
+
+{% block content %}
+
+{% include 'partials/topnav.html' %}
+
+<!--Table-->
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <table class="table bg-white">
+                    <thead class="bg-info">
+                        <tr class="text-white">
+                            <th scope="col">#</th>
+                            <th scope="col">Назва</th>
+                            <th scope="col">Адрес</th>
+                            <th scope="col">Тип</th>
+                            <th scope="col">Дія</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for market in markets %}
+                        <tr>
+                            <th scope="row"><a class="btn btn-info btn-sm" href="{% url 'Посмотреть' market.id %}">Переглянути</a></th>
+                            <td>{{ market.profile.market }}</td>
+                            <td>{{ market.profile.address }}</td>
+                            <td>{{ market.profile.type }}</td>
+                             <td>
+                                <a class="btn btn-danger btn-sm" href="{% url 'Удалить маркет' market.id %}">Видалити</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--End Table-->
+{% endblock %}

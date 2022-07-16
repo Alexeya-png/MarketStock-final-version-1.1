@@ -1,0 +1,52 @@
+{% extends 'partials/base.html' %}
+{% block title %}Информация о супермаркете{% endblock %}
+
+
+{% block content %}
+{% include 'partials/topnav.html' %}
+<div class="row my-4">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                Інформація о супермаркеті
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <table class="table table-borderless">
+                        <thead>
+                            <span class="h4">Інформація о супермаркеті</span>
+                            <hr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Адміністратор</th>
+                                <td>{{ markets.username }}</td>
+                            </tr>
+                            <tr>
+                                <th>Назва</th>
+                                <td>{{ markets.profile.market }}</td>
+                            </tr>
+                            <tr>
+                                <th>Телефон</th>
+                                <td>{{ markets.profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Адрес</th>
+                                <td>{{ markets.profile.address }}</td>
+                            </tr>
+                            <tr>
+                                <th>Тип</th>
+                                <td>{{ markets.profile.type }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

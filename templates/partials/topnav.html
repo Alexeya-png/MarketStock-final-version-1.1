@@ -1,0 +1,53 @@
+ <!--Topside-->
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Информація
+                    </div>
+                    <div class="card-body">
+                        <marquee behavior="" direction="">
+                            <h3 class="my-4">Реклама</h3>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Статистика
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'Супермаркеты' %}">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h5>Супермаркети <i class="fas fa-map-marker"></i></h5>
+                                        <h3>{{ markets_count }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'Продукты' %}">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h5>Товари <i class="fas fa-box"></i></h5>
+                                        <h3>{{ items_count }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'Поставки' %}">
+                                    <div class="card my-card shadow text-center p-3">
+                                        <h5>Поставки <i class="fas fa-shipping-fast"></i></h5>
+                                        <h3>{{ orders_count }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Topside-->
